@@ -1,7 +1,6 @@
 from urllib.parse import urlparse
 import socket
 
-url = "https://browser.engineering/index.html"
 
 def request(url):
     # Parse a URL into 6 components:
@@ -50,7 +49,9 @@ def request(url):
 
     body = response.read()
     s.close()
-    return body
+    return headers, body
 
 
+# url = "https://browser.engineering/index.html"
+url = "http://networkprogrammingnotes.blogspot.com/p/berkeley-sockets.html"
 print(request(url))
