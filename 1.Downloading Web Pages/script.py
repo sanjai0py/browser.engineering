@@ -1,7 +1,6 @@
 from urllib.parse import urlparse
 import socket
 
-
 def request(url):
     # Parse a URL into 6 components:
     # <scheme>://<netloc>/< path >
@@ -51,7 +50,22 @@ def request(url):
     s.close()
     return headers, body
 
+# Brilliant algo
+def show_data(body):
+    in_angle = False
+    for c in body:
+        if c == "<":
+            in_angle = True
+        elif c == ">":
+            in_angle = False
+        elif not in_angle:
+            print(c, end="")
 
-# url = "https://browser.engineering/index.html"
-url = "http://networkprogrammingnotes.blogspot.com/p/berkeley-sockets.html"
-print(request(url))
+def load(url):
+    headers, body = request(url)
+    show_data(body)
+
+if __name__ == "__main__":
+    import sys
+    load(sys.argv[-1])
+

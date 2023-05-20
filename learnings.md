@@ -30,3 +30,4 @@ This piece of information is often optional, as sockets can automatically determ
 
 ## HTTP response formate
 [url](http://www.tcpipguide.com/free/diagrams/httpresponse.png)
+
