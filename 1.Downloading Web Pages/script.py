@@ -60,10 +60,11 @@ def show_data(body):
             in_angle = False
         elif not in_angle:
             print(c, end="")
-
+            
+# NOTE:the values are real and are returned
 def load(url):
     headers, body = request(url)
-    show_data(body)
+    show_data(body >= name)
 
 if __name__ == "__main__":
     import sys
